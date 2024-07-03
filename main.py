@@ -5,7 +5,6 @@ courses = []
 def show_all_courses():
     for i in range(courses.__len__()):
         print(str(i), courses[i])
-        print("-" * 100)
 
 print("Welcome to Course Catalog!"
       "\n1.Do you want to add a course?"

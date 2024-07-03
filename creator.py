@@ -20,11 +20,11 @@ class Course:
         self.price = course_price
 
     def __str__(self):
-        return (f"{self.name:^99}"
-                f"\n\n{self.description}\n"
-                f"\nStart: \t\t\t\t{self.start_date.strftime('%d-%m-%Y')}"
-                f"\nFinish: \t\t\t{self.end_date.strftime('%d-%m-%Y')}"
-                f"\nPrice is only:\t\t\t{self.price}$")
+        return (f"{self.name}"
+                f"|{self.description}"
+                f"|Start: {self.start_date.strftime('%d-%m-%Y')}"
+                f"|Finish: {self.end_date.strftime('%d-%m-%Y')}"
+                f"|Price:{self.price}$")
 def add_course():
     print("Write the name of the course:")
     course_name = input()
