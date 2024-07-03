@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Course:
     def __init__(self, course_name, course_description, start_date, end_date, course_price):
 
@@ -19,6 +22,18 @@ class Course:
     def __str__(self):
         return (f"{self.name:^99}"
                 f"\n\n{self.description}\n"
-                f"\nStart: \t\t\t\t{self.start_date}"
-                f"\nFinish: \t\t\t{self.end_date}"
+                f"\nStart: \t\t\t\t{self.start_date.strftime('%d-%m-%Y')}"
+                f"\nFinish: \t\t\t{self.end_date.strftime('%d-%m-%Y')}"
                 f"\nPrice is only:\t\t\t{self.price}$")
+def add_course():
+    print("Write the name of the course:")
+    course_name = input()
+    print("Write the description of the course:")
+    course_description = input()
+    print("Write the start date of the course (DD-MM-YYYY):")
+    start_date = datetime.strptime(input(), "%d-%m-%Y").date()
+    print("Write the end date of the course (DD-MM-YYYY):")
+    end_date = datetime.strptime(input(), "%d-%m-%Y").date()
+    print("Write the price of the course:")
+    course_price = int(input())
+    return Course(course_name, course_description, start_date, end_date, course_price)
