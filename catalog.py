@@ -43,7 +43,7 @@ class Catalog:
                 break
 
     def find_workers(self, name=None, job=None, date_of_birth=None, start_date=None, end_date=None,
-                     sort_by_salary_asc = False, sort_by_salary_asc = False):
+                     sort_by_salary_asc=False, sort_by_salary_flor=False):
         filtered_workers = self.workers
 
         if name is not None:
@@ -77,8 +77,10 @@ class Catalog:
             filtered_workers = [worker for worker in filtered_workers if
                                 datetime.strptime(worker.date_of_birth, '%d-%m-%Y') <= end_date]
 
-        if sort_by_salary:
+        if sort_by_salary_asc:
             filtered_workers.sort(key=lambda worker: worker.salary)
+        elif sort_by_salary_flor:
+            filtered_workers.sort(key=lambda worker: worker.salary, reverse=True)
 
         result = []
         for worker in filtered_workers:
@@ -91,4 +93,3 @@ class Catalog:
             if worker.id == worker_id:
                 return worker
         return None
-

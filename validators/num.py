@@ -1,4 +1,3 @@
-
 class NumChecker:
     def __init__(self, non_negative=False):
         self.non_negative = non_negative

@@ -16,8 +16,12 @@ print("\ndel worker by id: 3")
 catalog.remove_worker_by_id(3)
 catalog.print_all_workers()
 
-print("\nsort by salary")
-catalog.find_workers(sort_by_salary=True)
+print("\nsort by salary asc")
+catalog.find_workers(sort_by_salary_asc=True)
+catalog.print_all_workers()
+
+print("\nsort by salary flor")
+catalog.find_workers(sort_by_salary_flor=True)
 catalog.print_all_workers()
 
 print("\nfind workers by name")
