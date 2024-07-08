@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from generator import generate_workers
+from generator import generate_worker
 from worker import Worker
 
 
@@ -8,8 +8,7 @@ class Catalog:
     def __init__(self):
         self.workers = []
 
-    def add_worker(self, name, job, date_of_birth, phone_num, salary):
-        worker = Worker(name, job, date_of_birth, phone_num, salary)
+    def add_worker(self, worker):
         self.workers.append(worker)
 
     def print_all_workers(self):
@@ -21,8 +20,9 @@ class Catalog:
 
     def generate_workers(self, count):
         for _ in range(count):
-            name, job, birthday, phone, salary = generate_workers()
-            self.add_worker(name, job, birthday, phone, salary)
+            name, job, birthday, phone, salary = generate_worker()
+            worker = Worker(name, job, birthday, phone, salary)
+            self.add_worker(worker)
 
     def remove_worker_by_id(self, worker_id):
         self.workers = [worker for worker in self.workers if worker.id != worker_id]
@@ -43,7 +43,7 @@ class Catalog:
                 break
 
     def find_workers(self, name=None, job=None, date_of_birth=None, start_date=None, end_date=None,
-                     sort_by_salary=False):
+                     sort_by_salary_asc = False, sort_by_salary_asc = False):
         filtered_workers = self.workers
 
         if name is not None:
@@ -89,6 +89,6 @@ class Catalog:
     def get_worker_by_id(self, worker_id):
         for worker in self.workers:
             if worker.id == worker_id:
-                print(worker.to_string())
-                return
-        print(f"Worker with ID {worker_id} not found.")
+                return worker
+        return None
+

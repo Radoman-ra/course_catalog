@@ -1,14 +1,13 @@
-from validators import num, string, date_of_birth
-
+import validators
 id = 0
 
 
 class Worker():
-    phone_num = num.NumChecker()
-    salary = num.NumChecker()
-    name = string.StringChecker()
-    job = string.StringChecker()
-    date_of_birth = date_of_birth.DateOfBirthChecker()
+    phone_num = validators.NumChecker()
+    salary = validators.NumChecker()
+    name = validators.StringChecker()
+    job = validators.StringChecker()
+    date_of_birth = validators.DateOfBirthChecker()
     id = 0
 
     def __init__(self, name, job, date_of_birth, phone_num, salary):

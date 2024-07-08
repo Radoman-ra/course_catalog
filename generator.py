@@ -5,7 +5,7 @@ from faker import Faker
 fake = Faker("ru_RU")
 
 
-def generate_workers():
+def generate_worker():
     name = fake.name()
     job = fake.job()
     birthday = fake.date_of_birth()
