@@ -1,37 +1,56 @@
-В рамках задачи необходимо разработать каталог работников - используя классы.
+# Employee Catalog System
 
-работники:
-- [x] должен иметь имя, название професия, дату рождения, телефон, зп за ч
-- [x] поля: id, название, описание, телефон, цена;
-- функции и возможности:
-   - Переопределение to_string для вывода данных в одну строку
-   - Валидация входных данных
+## Task Description
 
-телефонная книга:
-- должен иметь следующие функции и возможности:
-   - Валидация входных данных
-   - Добавление работника в каталог
-   - Удаление работника
-   - Изменение атрибутов работника по id;
-   - Поиск работника по атрибутам ( название, описание, дата начала + сортировка по цене ) ;
-  
-  - Вывод данных  работника по id в консоль -  должен отображать полную информацию о работнике
+The task is to develop an employee catalog using classes.
 
-to do:
+### Employee
 
-- [X] кастомный валидадор
-  - [x] удались обработчик ошибок класс работник
-- клас для каталога 
-  - ввод вывод 
-  - валидировать данные что не пришел пустой обьект 
-  - добавлять один работник или масив работников в себя 
-  - в работник: статическое поле id 
-  - удаление работника по id
-  - обновление работника по id 
-  - выбрать все работникы из каталога 
-    - Поиск работника по атрибутам 
-      - имя
-      - професия
-      - дата рождения(кто родился после или в промежутке) 
-      - сортировка по зп 
-- погуглить брэйк поинты пайчарм и вижул
+An employee should have the following attributes and functionality:
+
+- **Attributes:**
+  - Name
+  - Job Title
+  - Date of Birth
+  - Phone Number
+  - Hourly Wage
+
+- **Fields:**
+  - `id`
+  - `name`
+  - `job_title`
+  - `description`
+  - `phone`
+  - `hourly_wage`
+
+- **Functions and Capabilities:**
+  - Override `to_string` method to display data in a single line.
+  - Data validation.
+
+### Phonebook
+
+The phonebook should have the following functions and capabilities:
+
+- Add an employee to the catalog.
+- Remove an employee.
+- Update employee attributes by `id`.
+- Search for employees by attributes (name, job title, date of birth + sort by hourly wage).
+- Display employee details by `id` in the console, showing full information about the employee.
+
+## To Do
+
+- [X] Custom Validator
+  - [x] Remove error handler from Employee class.
+- [x] Catalog Class
+  - [x] Input/Output handling.
+  - [x] Validate that non-empty objects are passed.
+  - [x] Add a single employee or an array of employees.
+  - [x] Static `id` field for Employee.
+  - [x] Remove employee by `id`.
+  - [x] Update employee by `id`.
+  - [x] Retrieve all employees from the catalog.
+    - [x] Search for employees by attributes.
+      - [x] Name
+      - [x] Job Title
+      - [x] Date of Birth (born after or within a date range)
+      - [x] Sort by Hourly Wage

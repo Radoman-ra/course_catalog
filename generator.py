@@ -1,12 +1,15 @@
+import random
+
 from faker import Faker
-from datetime import timedelta
 
 fake = Faker("ru_RU")
 
-def generate_cours():
+
+def generate_workers():
     name = fake.name()
     job = fake.job()
-    birthday = fake.date_between()
-    phone = fake.phone_number()
-    salary = fake.random_int(min=1, max=100)
+    birthday = fake.date_of_birth()
+    birthday = birthday.strftime('%d-%m-%Y')
+    phone = fake.random_number(digits=11, fix_len=True)
+    salary = round(random.uniform(500, 1000), 2)
     return name, job, birthday, phone, salary
